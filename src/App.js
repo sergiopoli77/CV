@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import Header from "./Components/Header";
+import About from "./Components/AboutMe";
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
 
       <div className="container">
         <Header />
-        <main className="right-side"></main>
+        <main className="right-side">
+          <About />
+        </main>
       </div>
     </div>
   );
