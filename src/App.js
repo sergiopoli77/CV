@@ -96,39 +96,30 @@ function App() {
             <div className="portfolio">
               <div className="portfolio-item">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="./images/alaise.png"
                   alt="Visual Programming Project"
                   className="project-img"
                 />
                 <h3>Visual Programming</h3>
-                <p>
-                  Project ini berfokus pada pembuatan aplikasi desktop dengan
-                  Visual Studio untuk restoran dan kafe.
-                </p>
+                <p>Desktop Aplikasi Inventory Admin</p>
               </div>
               <div className="portfolio-item">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="./images/tomatikweb.png"
                   alt="Front-End Web Project"
                   className="project-img"
                 />
                 <h3>Front-End Web</h3>
-                <p>
-                  Website interaktif dengan fitur modern menggunakan React dan
-                  Bootstrap.
-                </p>
+                <p>Tomatik, website informasi tentang tomat</p>
               </div>
               <div className="portfolio-item">
                 <img
-                  src="https://via.placeholder.com/150"
+                  src="./images/scifigame.jpeg"
                   alt="Unity 3D Game Project"
                   className="project-img"
                 />
                 <h3>Unity 3D Game</h3>
-                <p>
-                  Game berbasis 3D yang dibuat dengan Unity Engine, berfokus
-                  pada eksplorasi dunia virtual.
-                </p>
+                <p>Game FPS Shooter bertemakan sci-fi</p>
               </div>
             </div>
           </section>
