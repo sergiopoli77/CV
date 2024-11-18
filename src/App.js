@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import Header from "./Components/Header";
 import About from "./Components/AboutMe";
 import Skills from "./Components/Skills";
+import Works from "./Components/Works";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <main className="right-side">
           <About />
           <Skills />
+          <Works />
         </main>
       </div>
     </div>
