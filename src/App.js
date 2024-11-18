@@ -62,9 +62,10 @@ function App() {
           <section className="about-me fadeIn">
             <h2>About Me</h2>
             <p>
-              Hi, I'm Sergio Poli, a passionate Web Developer with 5 years of
-              experience. I specialize in creating stunning websites and
-              applications with a focus on user experience and performance.
+              Saya mahasiswa Universitas Klabat tahun ajaran 2022 yang mengambil
+              prodi Informatika dan saya memiliki minat dan ketertarikan di Web
+              Development. Dan saya ingin memperdalam lagi keterampilan saya di
+              bagian Web Development
             </p>
           </section>
           <div className="section-divider" />
@@ -89,25 +90,51 @@ function App() {
             </ul>
           </section>
           <div className="section-divider" />
+
           <section className="works fadeIn">
-            <h2>My Works</h2>
+            <h2>My Projects</h2>
             <div className="portfolio">
-              <a href="#" className="portfolio-item">
-                <i className="fas fa-laptop-code" />
-                <p>Web Development</p>
-              </a>
-              <a href="#" className="portfolio-item">
-                <i className="fas fa-paint-brush" />
-                <p>UI/UX Design</p>
-              </a>
-              <a href="#" className="portfolio-item">
-                <i className="fas fa-camera-retro" />
-                <p>Photography</p>
-              </a>
+              <div className="portfolio-item">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Visual Programming Project"
+                  className="project-img"
+                />
+                <h3>Visual Programming</h3>
+                <p>
+                  Project ini berfokus pada pembuatan aplikasi desktop dengan
+                  Visual Studio untuk restoran dan kafe.
+                </p>
+              </div>
+              <div className="portfolio-item">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Front-End Web Project"
+                  className="project-img"
+                />
+                <h3>Front-End Web</h3>
+                <p>
+                  Website interaktif dengan fitur modern menggunakan React dan
+                  Bootstrap.
+                </p>
+              </div>
+              <div className="portfolio-item">
+                <img
+                  src="https://via.placeholder.com/150"
+                  alt="Unity 3D Game Project"
+                  className="project-img"
+                />
+                <h3>Unity 3D Game</h3>
+                <p>
+                  Game berbasis 3D yang dibuat dengan Unity Engine, berfokus
+                  pada eksplorasi dunia virtual.
+                </p>
+              </div>
             </div>
           </section>
+
           <div className="section-divider" />
-          {/* Pindahkan Contact Me ke sini */}
+
           <contact className="contact-info fadeIn">
             <h3>Contact Me:</h3>
             <ul>
