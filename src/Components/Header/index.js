@@ -1,22 +1,33 @@
 import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [header, setHeader] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase();
+    const headerRef = ref(db, "header");
+    onValue(headerRef, (snapshot) => {
+      const data = snapshot.val();
+      setHeader(data);
+    });
+  }, []);
+
   return (
     <header className="left-side">
       <div className="banner">
-        <h2 className="fadeIn">Welcome to My CV</h2>
+        <h2 className="fadeIn">{header.cv}</h2>
       </div>
       <img
         src="https://via.placeholder.com/150"
         alt="Profile Image"
         className="profile-img fadeIn"
       />
-      <h1 className="fadeIn">Sergio Poli</h1>
-      <p className="subtitle fadeIn">
-        Mahasiswa Universitas Klabat | FILKOM
-      </p>
+      <h1 className="fadeIn">{header.title}</h1>
+      <p className="subtitle fadeIn">{header.subtitle}</p>
       <section className="social-media fadeIn">
-        <h3>Follow Me</h3>
+        <h3>{header.media}</h3>
         <div className="social-icons">
           <a
             href="https://www.instagram.com/sergiooyp/"
