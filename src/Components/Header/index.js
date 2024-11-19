@@ -1,6 +1,7 @@
 import React from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
-import { useEffect, useState } from "react";
+import { useEffect, useState, CSSProperties } from "react";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Header = () => {
   const [header, setHeader] = useState({});
@@ -20,7 +21,7 @@ const Header = () => {
         <h2 className="fadeIn">{header.cvy}</h2>
       </div>
       <img
-        src="https://via.placeholder.com/150"
+        src={`data:image/jpeg;base64, ${header.profil}`}
         alt="Profile Image"
         className="profile-img fadeIn"
       />
