@@ -1,7 +1,6 @@
 import React from "react";
 import { getDatabase, ref, onValue } from "firebase/database";
 import { useEffect, useState, CSSProperties } from "react";
-import ClipLoader from "react-spinners/ClipLoader";
 
 const Header = () => {
   const [header, setHeader] = useState({});
