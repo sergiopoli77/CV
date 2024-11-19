@@ -1,36 +1,49 @@
 import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 
 const Works = () => {
+  const [works, setWorks] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase();
+    const worksRef = ref(db, "works");
+    onValue(worksRef, (snapshot) => {
+      const data = snapshot.val();
+      setWorks(data);
+    });
+  }, []);
+
   return (
     <section className="works fadeIn">
-      <h2>My Projects</h2>
+      <h2>{works.title}</h2>
       <div className="portfolio">
         <div className="portfolio-item">
           <img
-            src="./images/alaise.png"
+            src={`data:image/jpeg;base64, ${works.g1}`}
             alt="Visual Programming Project"
             className="project-img"
           />
-          <h3>Visual Programming</h3>
-          <p>Desktop Aplikasi Inventory Admin</p>
+          <h3>{works.p1}</h3>
+          <p>{works.p1j}</p>
         </div>
         <div className="portfolio-item">
           <img
-            src="./images/tomatikweb.png"
+            src={`data:image/jpeg;base64, ${works.g2}`}
             alt="Front-End Web Project"
             className="project-img"
           />
-          <h3>Front-End Web</h3>
-          <p>Tomatik, website informasi tentang tomat</p>
+          <h3>{works.p2}</h3>
+          <p>{works.p2j}</p>
         </div>
         <div className="portfolio-item">
           <img
-            src="./images/scifigame.jpeg"
+            src={`data:image/jpeg;base64, ${works.g3}`}
             alt="Unity 3D Game Project"
             className="project-img"
           />
-          <h3>Unity 3D Game</h3>
-          <p>Game FPS Shooter bertemakan sci-fi</p>
+          <h3>{works.p3}</h3>
+          <p>{works.p3j}</p>
         </div>
       </div>
     </section>

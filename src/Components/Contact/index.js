@@ -1,18 +1,30 @@
 import React from "react";
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
+  const [contact, setContact] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase();
+    const contactRef = ref(db, "contact");
+    onValue(contactRef, (snapshot) => {
+      const data = snapshot.val();
+      setContact(data);
+    });
+  }, []);
   return (
     <section className="contact-info fadeIn">
-      <h3>Contact Me:</h3>
+      <h3>{contact.title}</h3>
       <ul>
         <li>
-          <i className="fas fa-envelope" /> sergio.poli0904@gmail.com
+          <i className="fas fa-envelope" /> {contact.email}
         </li>
         <li>
-          <i className="fas fa-phone-alt" /> +65 895 635 363 191
+          <i className="fas fa-phone-alt" /> {contact.number}
         </li>
         <li>
-          <i className="fas fa-map-marker-alt" /> Manado, Indonesia
+          <i className="fas fa-map-marker-alt" /> {contact.live}
         </li>
       </ul>
     </section>
