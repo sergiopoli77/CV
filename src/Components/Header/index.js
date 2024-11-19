@@ -17,7 +17,7 @@ const Header = () => {
   return (
     <header className="left-side">
       <div className="banner">
-        <h2 className="fadeIn">{header.cv}</h2>
+        <h2 className="fadeIn">{header.cvy}</h2>
       </div>
       <img
         src="https://via.placeholder.com/150"
