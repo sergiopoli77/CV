@@ -1,24 +1,38 @@
 import React from "react";
-
+import { getDatabase, ref, onValue } from "firebase/database";
+import { useEffect, useState } from "react";
 const Skills = () => {
+  const [skills, setSkills] = useState({});
+
+  useEffect(() => {
+    const db = getDatabase();
+    const skillsRef = ref(db, "skills");
+    onValue(skillsRef, (snapshot) => {
+      const data = snapshot.val();
+      setSkills(data);
+    });
+  }, []);
   return (
     <section className="skills fadeIn">
-      <h2>My Skills</h2>
+      <h2>{skills.title}</h2>
       <ul>
         <li>
-          <i className="fab fa-html5" /> HTML, CSS, JavaScript
+          <i className="fab fa-html5" /> {skills.sk1}
         </li>
         <li>
-          <i className="fab fa-react" /> React Js, React Native
+          <i className="fab fa-react" /> {skills.sk2}
         </li>
         <li>
-          <i className="fas fa-pencil-alt" /> UI/UX Design
+          <i className="fas fa-pencil-alt" /> {skills.sk3}
         </li>
         <li>
-          <i className="fab fa-git-alt" /> Git
+          <i className="fab fa-git-alt" /> {skills.sk4}
         </li>
         <li>
-          <i className="fab fa-unity" /> Unity 3D
+          <i className="fab fa-unity" /> {skills.sk5}
+        </li>
+        <li>
+          <i className="fab fa-python" /> {skills.sk6}
         </li>
       </ul>
     </section>
